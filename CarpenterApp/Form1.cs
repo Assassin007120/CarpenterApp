@@ -82,12 +82,21 @@ namespace CarpenterApp
             return false;
         }
 
+        private double GetDrawerCost()
+        {
+            if (int.TryParse(txtNumDrawers.Text, out int numberOfDrawers))
+                return numberOfDrawers * 180; // Each drawer costs R180
+
+            return 0;
+        }
+
         private void btnGetQuote_Click(object sender, EventArgs e)
         {
             const double minCharge = 1200;
             double charge = 0;
 
             charge = GetSurfaceAreaCost();
+            charge = charge + GetDrawerCost();
             GetSelectedRadioButtonFromPanel();
         }
     }
