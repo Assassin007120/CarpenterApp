@@ -48,8 +48,46 @@ namespace CarpenterApp
             }
         }
 
+        private double GetSurfaceAreaCost()
+        {
+            var result = CalculateSurfaceArea();
+
+            if (result) // If true, add additional cost to the total
+                return 300;
+
+            return 0;
+        }
+
+        private bool CalculateSurfaceArea()
+        {
+            double surfaceArea = 0;
+
+            if (double.TryParse(txtLength.Text, out double length) && double.TryParse(txtWidth.Text, out double width))
+                surfaceArea = length * width;
+
+            var extraCostCheck = SurfaceAreaExtraCostCheck(surfaceArea);
+
+            if (extraCostCheck) // Return true to add additional cost to the total
+                return true;
+
+            return false;
+        }
+
+        private bool SurfaceAreaExtraCostCheck(double surfaceArea)
+        {
+            // Check if surface area exceeds 700,000 square millimeters (700,000 mm²)
+            if (surfaceArea > 700000)
+                return true;
+
+            return false;
+        }
+
         private void btnGetQuote_Click(object sender, EventArgs e)
         {
+            const double minCharge = 1200;
+            double charge = 0;
+
+            charge = GetSurfaceAreaCost();
             GetSelectedRadioButtonFromPanel();
         }
     }
