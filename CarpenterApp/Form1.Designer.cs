@@ -1,6 +1,6 @@
 ﻿namespace CarpenterApp
 {
-    partial class Form1
+    partial class frmCarpenter
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.lblLength = new System.Windows.Forms.Label();
             this.lblWidth = new System.Windows.Forms.Label();
-            this.lblNoOfDrawers = new System.Windows.Forms.Label();
+            this.lblNumDrawers = new System.Windows.Forms.Label();
             this.lblTypeOfWood = new System.Windows.Forms.Label();
-            this.lblQuotePrice = new System.Windows.Forms.Label();
+            this.lblPriceMsg = new System.Windows.Forms.Label();
             this.txtLength = new System.Windows.Forms.TextBox();
             this.txtWidth = new System.Windows.Forms.TextBox();
-            this.txtNoOfDrawers = new System.Windows.Forms.TextBox();
+            this.txtNumDrawers = new System.Windows.Forms.TextBox();
             this.pnWoodPanel = new System.Windows.Forms.Panel();
             this.radPine = new System.Windows.Forms.RadioButton();
             this.radOak = new System.Windows.Forms.RadioButton();
@@ -53,7 +53,7 @@
             this.lblLength.Name = "lblLength";
             this.lblLength.Size = new System.Drawing.Size(96, 13);
             this.lblLength.TabIndex = 0;
-            this.lblLength.Text = "Desk Length (mm):";
+            this.lblLength.Text = "Desk Length [mm]:";
             // 
             // lblWidth
             // 
@@ -62,34 +62,34 @@
             this.lblWidth.Name = "lblWidth";
             this.lblWidth.Size = new System.Drawing.Size(91, 13);
             this.lblWidth.TabIndex = 1;
-            this.lblWidth.Text = "Desk Width (mm):";
+            this.lblWidth.Text = "Desk Width [mm]:";
             // 
-            // lblNoOfDrawers
+            // lblNumDrawers
             // 
-            this.lblNoOfDrawers.AutoSize = true;
-            this.lblNoOfDrawers.Location = new System.Drawing.Point(99, 119);
-            this.lblNoOfDrawers.Name = "lblNoOfDrawers";
-            this.lblNoOfDrawers.Size = new System.Drawing.Size(100, 13);
-            this.lblNoOfDrawers.TabIndex = 2;
-            this.lblNoOfDrawers.Text = "Number Of Drawers";
+            this.lblNumDrawers.AutoSize = true;
+            this.lblNumDrawers.Location = new System.Drawing.Point(99, 119);
+            this.lblNumDrawers.Name = "lblNumDrawers";
+            this.lblNumDrawers.Size = new System.Drawing.Size(103, 13);
+            this.lblNumDrawers.TabIndex = 2;
+            this.lblNumDrawers.Text = "Number Of Drawers:";
             // 
             // lblTypeOfWood
             // 
             this.lblTypeOfWood.AutoSize = true;
             this.lblTypeOfWood.Location = new System.Drawing.Point(99, 156);
             this.lblTypeOfWood.Name = "lblTypeOfWood";
-            this.lblTypeOfWood.Size = new System.Drawing.Size(75, 13);
+            this.lblTypeOfWood.Size = new System.Drawing.Size(78, 13);
             this.lblTypeOfWood.TabIndex = 3;
-            this.lblTypeOfWood.Text = "Type of Wood";
+            this.lblTypeOfWood.Text = "Type of Wood:";
             // 
-            // lblQuotePrice
+            // lblPriceMsg
             // 
-            this.lblQuotePrice.AutoSize = true;
-            this.lblQuotePrice.Location = new System.Drawing.Point(99, 285);
-            this.lblQuotePrice.Name = "lblQuotePrice";
-            this.lblQuotePrice.Size = new System.Drawing.Size(80, 13);
-            this.lblQuotePrice.TabIndex = 4;
-            this.lblQuotePrice.Text = "Quote Price Is: ";
+            this.lblPriceMsg.AutoSize = true;
+            this.lblPriceMsg.Location = new System.Drawing.Point(99, 285);
+            this.lblPriceMsg.Name = "lblPriceMsg";
+            this.lblPriceMsg.Size = new System.Drawing.Size(79, 13);
+            this.lblPriceMsg.TabIndex = 4;
+            this.lblPriceMsg.Text = "Quote Price is: ";
             // 
             // txtLength
             // 
@@ -107,13 +107,13 @@
             this.txtWidth.TabIndex = 6;
             this.txtWidth.TextChanged += new System.EventHandler(this.txtWidth_TextChanged);
             // 
-            // txtNoOfDrawers
+            // txtNumDrawers
             // 
-            this.txtNoOfDrawers.Location = new System.Drawing.Point(270, 116);
-            this.txtNoOfDrawers.Name = "txtNoOfDrawers";
-            this.txtNoOfDrawers.Size = new System.Drawing.Size(159, 20);
-            this.txtNoOfDrawers.TabIndex = 7;
-            this.txtNoOfDrawers.TextChanged += new System.EventHandler(this.txtNoOfDrawers_TextChanged);
+            this.txtNumDrawers.Location = new System.Drawing.Point(270, 116);
+            this.txtNumDrawers.Name = "txtNumDrawers";
+            this.txtNumDrawers.Size = new System.Drawing.Size(159, 20);
+            this.txtNumDrawers.TabIndex = 7;
+            this.txtNumDrawers.TextChanged += new System.EventHandler(this.txtNoOfDrawers_TextChanged);
             // 
             // pnWoodPanel
             // 
@@ -190,7 +190,7 @@
             this.lblPrice.TabIndex = 10;
             this.lblPrice.Text = "Quote goes here";
             // 
-            // Form1
+            // frmCarpenter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,16 +198,16 @@
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.btnGetQuote);
             this.Controls.Add(this.pnWoodPanel);
-            this.Controls.Add(this.txtNoOfDrawers);
+            this.Controls.Add(this.txtNumDrawers);
             this.Controls.Add(this.txtWidth);
             this.Controls.Add(this.txtLength);
-            this.Controls.Add(this.lblQuotePrice);
+            this.Controls.Add(this.lblPriceMsg);
             this.Controls.Add(this.lblTypeOfWood);
-            this.Controls.Add(this.lblNoOfDrawers);
+            this.Controls.Add(this.lblNumDrawers);
             this.Controls.Add(this.lblWidth);
             this.Controls.Add(this.lblLength);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmCarpenter";
+            this.Text = "Carpenter Program";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnWoodPanel.ResumeLayout(false);
             this.pnWoodPanel.PerformLayout();
@@ -220,12 +220,12 @@
 
         private System.Windows.Forms.Label lblLength;
         private System.Windows.Forms.Label lblWidth;
-        private System.Windows.Forms.Label lblNoOfDrawers;
+        private System.Windows.Forms.Label lblNumDrawers;
         private System.Windows.Forms.Label lblTypeOfWood;
-        private System.Windows.Forms.Label lblQuotePrice;
+        private System.Windows.Forms.Label lblPriceMsg;
         private System.Windows.Forms.TextBox txtLength;
         private System.Windows.Forms.TextBox txtWidth;
-        private System.Windows.Forms.TextBox txtNoOfDrawers;
+        private System.Windows.Forms.TextBox txtNumDrawers;
         private System.Windows.Forms.Panel pnWoodPanel;
         private System.Windows.Forms.RadioButton radOak;
         private System.Windows.Forms.RadioButton radMahogany;

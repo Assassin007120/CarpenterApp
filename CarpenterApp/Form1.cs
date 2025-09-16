@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace CarpenterApp
 {
-    public partial class Form1 : Form
+    public partial class frmCarpenter : Form
     {
-        public Form1()
+        public frmCarpenter()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace CarpenterApp
 
         private void txtNoOfDrawers_TextChanged(object sender, EventArgs e)
         {
-            var numberOfDrawers = txtNoOfDrawers.Text;
+            var numberOfDrawers = txtNumDrawers.Text;
         }
 
         private void pnWoodPanel_Paint(object sender, PaintEventArgs e)
