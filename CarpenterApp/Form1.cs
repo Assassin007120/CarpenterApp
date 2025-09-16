@@ -36,75 +36,128 @@ namespace CarpenterApp
         }
         private double GetSurfaceAreaCost()
         {
-            var result = CalculateSurfaceArea();
+            try
+            {
+                var result = CalculateSurfaceArea();
 
-            if (result) // If true, add additional cost to the total
-                return 300;
+                if (result) // If true, add additional cost to the total
+                    return 300;
 
-            return 0;
+                return 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private bool CalculateSurfaceArea()
         {
-            double surfaceArea = 0;
+            try
+            {
+                double surfaceArea = 0;
 
-            if (double.TryParse(txtLength.Text, out double length) && double.TryParse(txtWidth.Text, out double width))
-                surfaceArea = length * width;
+                if (double.TryParse(txtLength.Text, out double length) && double.TryParse(txtWidth.Text, out double width))
+                    surfaceArea = length * width;
 
-            var extraCostCheck = SurfaceAreaExtraCostCheck(surfaceArea);
+                var extraCostCheck = SurfaceAreaExtraCostCheck(surfaceArea);
 
-            if (extraCostCheck) // Return true to add additional cost to the total
-                return true;
+                if (extraCostCheck) // Return true to add additional cost to the total
+                    return true;
 
-            return false;
+                return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private bool SurfaceAreaExtraCostCheck(double surfaceArea)
         {
-            // Check if surface area exceeds 700,000 square millimeters (700,000 mm²)
-            if (surfaceArea > 700000)
-                return true;
+            try
+            {
+                // Check if surface area exceeds 700,000 square millimeters (700,000 mm²)
+                if (surfaceArea > 700000)
+                    return true;
 
-            return false;
+                return false;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private double GetDrawerCost()
         {
-            if (int.TryParse(txtNumDrawers.Text, out int numberOfDrawers))
-                return numberOfDrawers * 180; // Each drawer costs R180
+            try
+            {
+                if (int.TryParse(txtNumDrawers.Text, out int numberOfDrawers))
+                    return numberOfDrawers * 180; // Each drawer costs R180
 
-            return 0;
+                return 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private double CalculateTypeOfWoodCost()
         {
-            foreach (Control control in pnWoodPanel.Controls)
+            try
             {
-                if (control is RadioButton radioButton && radioButton.Checked)
+                foreach (Control control in pnWoodPanel.Controls)
                 {
-                    // This is the selected radio button
-                    string selectedText = radioButton.Text;
+                    if (control is RadioButton radioButton && radioButton.Checked)
+                    {
+                        // This is the selected radio button
+                        string selectedText = radioButton.Text;
 
-                    if (selectedText == "Cherry" || selectedText == "Mahogany")
-                        return 900;
+                        if (selectedText == "Cherry" || selectedText == "Mahogany")
+                            return 900;
 
-                    if (selectedText == "Oak")
-                        return 750;
+                        if (selectedText == "Oak")
+                            return 750;
+                    }
                 }
-            }
 
-            return 0; // Default return value if no radio button is selected
+                return 0; // Default return value if no radio button is selected
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        private void CalculateTotalOrderCost()
+        private double CalculateTotalOrderCost()
         {
-            const double minCharge = 1200;
-            double totalCharge = minCharge + GetSurfaceAreaCost() + GetDrawerCost() + CalculateTypeOfWoodCost();
+            try
+            {
+                const double minCharge = 1200;
+                double totalCharge = minCharge + GetSurfaceAreaCost() + GetDrawerCost() + CalculateTypeOfWoodCost();
+
+                return totalCharge;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void btnGetQuote_Click(object sender, EventArgs e)
         {
-            CalculateTotalOrderCost();
+            try
+            {
+                var total = CalculateTotalOrderCost();
+
+                lblPrice.Text = "R " + total.ToString("N2");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

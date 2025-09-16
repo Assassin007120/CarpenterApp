@@ -96,7 +96,7 @@
             this.txtLength.Location = new System.Drawing.Point(270, 45);
             this.txtLength.Name = "txtLength";
             this.txtLength.Size = new System.Drawing.Size(159, 20);
-            this.txtLength.TabIndex = 5;
+            this.txtLength.TabIndex = 1;
             this.txtLength.TextChanged += new System.EventHandler(this.txtLength_TextChanged);
             // 
             // txtWidth
@@ -104,7 +104,7 @@
             this.txtWidth.Location = new System.Drawing.Point(270, 81);
             this.txtWidth.Name = "txtWidth";
             this.txtWidth.Size = new System.Drawing.Size(159, 20);
-            this.txtWidth.TabIndex = 6;
+            this.txtWidth.TabIndex = 2;
             this.txtWidth.TextChanged += new System.EventHandler(this.txtWidth_TextChanged);
             // 
             // txtNumDrawers
@@ -112,7 +112,7 @@
             this.txtNumDrawers.Location = new System.Drawing.Point(270, 116);
             this.txtNumDrawers.Name = "txtNumDrawers";
             this.txtNumDrawers.Size = new System.Drawing.Size(159, 20);
-            this.txtNumDrawers.TabIndex = 7;
+            this.txtNumDrawers.TabIndex = 3;
             this.txtNumDrawers.TextChanged += new System.EventHandler(this.txtNoOfDrawers_TextChanged);
             // 
             // pnWoodPanel
@@ -124,7 +124,7 @@
             this.pnWoodPanel.Location = new System.Drawing.Point(270, 156);
             this.pnWoodPanel.Name = "pnWoodPanel";
             this.pnWoodPanel.Size = new System.Drawing.Size(159, 100);
-            this.pnWoodPanel.TabIndex = 8;
+            this.pnWoodPanel.TabIndex = 4;
             this.pnWoodPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnWoodPanel_Paint);
             // 
             // radPine
@@ -133,7 +133,7 @@
             this.radPine.Location = new System.Drawing.Point(12, 74);
             this.radPine.Name = "radPine";
             this.radPine.Size = new System.Drawing.Size(46, 17);
-            this.radPine.TabIndex = 3;
+            this.radPine.TabIndex = 8;
             this.radPine.TabStop = true;
             this.radPine.Text = "Pine";
             this.radPine.UseVisualStyleBackColor = true;
@@ -144,7 +144,7 @@
             this.radOak.Location = new System.Drawing.Point(12, 53);
             this.radOak.Name = "radOak";
             this.radOak.Size = new System.Drawing.Size(45, 17);
-            this.radOak.TabIndex = 2;
+            this.radOak.TabIndex = 7;
             this.radOak.TabStop = true;
             this.radOak.Text = "Oak";
             this.radOak.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             this.radMahogany.Location = new System.Drawing.Point(12, 30);
             this.radMahogany.Name = "radMahogany";
             this.radMahogany.Size = new System.Drawing.Size(75, 17);
-            this.radMahogany.TabIndex = 1;
+            this.radMahogany.TabIndex = 6;
             this.radMahogany.TabStop = true;
             this.radMahogany.Text = "Mahogany";
             this.radMahogany.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@
             this.radCherry.Location = new System.Drawing.Point(12, 7);
             this.radCherry.Name = "radCherry";
             this.radCherry.Size = new System.Drawing.Size(55, 17);
-            this.radCherry.TabIndex = 0;
+            this.radCherry.TabIndex = 5;
             this.radCherry.TabStop = true;
             this.radCherry.Text = "Cherry";
             this.radCherry.UseVisualStyleBackColor = true;
