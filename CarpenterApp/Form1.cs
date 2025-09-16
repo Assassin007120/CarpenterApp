@@ -29,5 +29,29 @@ namespace CarpenterApp
         {
             var numberOfDrawers = txtNoOfDrawers.Text;
         }
+
+        private void pnWoodPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GetSelectedRadioButtonFromPanel()
+        {
+            foreach (Control control in pnWoodPanel.Controls)
+            {
+                if (control is RadioButton radioButton && radioButton.Checked)
+                {
+                    // This is the selected radio button
+                    string selectedText = radioButton.Text;
+                    MessageBox.Show("Selected option: " + selectedText);
+                    break;
+                }
+            }
+        }
+
+        private void btnGetQuote_Click(object sender, EventArgs e)
+        {
+            GetSelectedRadioButtonFromPanel();
+        }
     }
 }

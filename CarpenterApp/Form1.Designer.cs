@@ -125,6 +125,7 @@
             this.pnWoodPanel.Name = "pnWoodPanel";
             this.pnWoodPanel.Size = new System.Drawing.Size(159, 100);
             this.pnWoodPanel.TabIndex = 8;
+            this.pnWoodPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.pnWoodPanel_Paint);
             // 
             // radPine
             // 
@@ -178,6 +179,7 @@
             this.btnGetQuote.TabIndex = 9;
             this.btnGetQuote.Text = "Get Quote";
             this.btnGetQuote.UseVisualStyleBackColor = true;
+            this.btnGetQuote.Click += new System.EventHandler(this.btnGetQuote_Click);
             // 
             // lblPrice
             // 
