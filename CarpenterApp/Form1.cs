@@ -43,7 +43,6 @@ namespace CarpenterApp
                 {
                     // This is the selected radio button
                     string selectedText = radioButton.Text;
-                    MessageBox.Show("Selected option: " + selectedText);
                     break;
                 }
             }
