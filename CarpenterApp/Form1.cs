@@ -34,20 +34,6 @@ namespace CarpenterApp
         {
 
         }
-
-        private void GetSelectedRadioButtonFromPanel()
-        {
-            foreach (Control control in pnWoodPanel.Controls)
-            {
-                if (control is RadioButton radioButton && radioButton.Checked)
-                {
-                    // This is the selected radio button
-                    string selectedText = radioButton.Text;
-                    break;
-                }
-            }
-        }
-
         private double GetSurfaceAreaCost()
         {
             var result = CalculateSurfaceArea();
@@ -90,14 +76,35 @@ namespace CarpenterApp
             return 0;
         }
 
-        private void btnGetQuote_Click(object sender, EventArgs e)
+        private double CalculateTypeOfWoodCost()
+        {
+            foreach (Control control in pnWoodPanel.Controls)
+            {
+                if (control is RadioButton radioButton && radioButton.Checked)
+                {
+                    // This is the selected radio button
+                    string selectedText = radioButton.Text;
+
+                    if (selectedText == "Cherry" || selectedText == "Mahogany")
+                        return 900;
+
+                    if (selectedText == "Oak")
+                        return 750;
+                }
+            }
+
+            return 0; // Default return value if no radio button is selected
+        }
+
+        private void CalculateTotalOrderCost()
         {
             const double minCharge = 1200;
-            double charge = 0;
+            double totalCharge = minCharge + GetSurfaceAreaCost() + GetDrawerCost() + CalculateTypeOfWoodCost();
+        }
 
-            charge = GetSurfaceAreaCost();
-            charge = charge + GetDrawerCost();
-            GetSelectedRadioButtonFromPanel();
+        private void btnGetQuote_Click(object sender, EventArgs e)
+        {
+            CalculateTotalOrderCost();
         }
     }
 }
